@@ -25,8 +25,8 @@ if command -v apt-get &>/dev/null; then
     NGINX_AVAILABLE="/etc/nginx/sites-available"
     NGINX_ENABLED="/etc/nginx/sites-enabled"
 elif command -v dnf &>/dev/null; then
-    # Fedora / RHEL 8+ / Rocky / Alma
-    sudo dnf install -y python3 python3-pip nginx
+    # Fedora / RHEL 8+ / Rocky / Alma / OpenCloudOS
+    sudo dnf install -y --disableexcludes=all python3 python3-pip nginx
     NGINX_AVAILABLE="/etc/nginx/conf.d"
     NGINX_ENABLED=""
 elif command -v yum &>/dev/null; then
