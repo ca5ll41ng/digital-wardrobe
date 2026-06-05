@@ -1,0 +1,15 @@
+# 电子衣橱 - Python 依赖
+# ── Web 框架 ──
+flask>=3.0
+flask-cors>=4.0
+
+# ── 图片处理 ──
+Pillow>=10.0
+
+# ── 智能抠图（rembg）──
+# 注意：首次运行会自动下载 u2net 模型（~170MB），请耐心等待
+rembg>=0.2.0
+
+# ── 生产部署（可选）──
+# gunicorn>=21.0        # Linux 上替换 Flask 开发服务器
+# gevent>=23.0          # gunicorn 的异步 worker
