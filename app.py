@@ -112,6 +112,12 @@ def index():
     return render_template('index.html')
 
 
+# Service Worker 必须从根路径注册（浏览器限制 scope = /）
+@app.route('/sw.js')
+def service_worker():
+    return send_file('static/sw.js', mimetype='application/javascript')
+
+
 # ── 图片 API ────────────────────────────────────────────────
 @app.route('/api/upload', methods=['POST'])
 def upload():

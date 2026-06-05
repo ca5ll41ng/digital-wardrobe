@@ -1,0 +1,18 @@
+{
+  "name": "电子衣橱",
+  "short_name": "衣橱",
+  "description": "智能抠图电子衣橱 - 上传衣物自动去除背景，自由搭配",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#faf8f5",
+  "theme_color": "#b8956a",
+  "icons": [
+    {
+      "src": "/static/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>电子衣橱 - Digital Wardrobe</title>
+
+<!-- PWA -->
+<link rel="manifest" href="/static/manifest.json">
+<meta name="theme-color" content="#b8956a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="衣橱">
+<link rel="apple-touch-icon" href="/static/icon.svg">
+
 <style>
 /* ============================================================
    全局 & 变量
@@ -928,6 +937,15 @@ document.addEventListener('click', (e) => {
     e.target.style.display = 'none';
   }
 });
+</script>
+
+<!-- 注册 Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(() => console.log('📦 PWA 已就绪，支持离线使用'))
+    .catch(() => console.log('Service Worker 注册跳过'));
+}
 </script>
 </body>
 </html>

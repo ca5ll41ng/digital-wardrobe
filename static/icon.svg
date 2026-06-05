@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- 背景 -->
+  <rect width="512" height="512" rx="100" fill="#b8956a"/>
+  
+  <!-- 衣柜外框 -->
+  <rect x="80" y="60" width="352" height="400" rx="16" fill="#8b7355" stroke="#6b5a45" stroke-width="6"/>
+  
+  <!-- 衣柜门（左） -->
+  <rect x="86" y="66" width="172" height="388" rx="10" fill="#a0845c"/>
+  <!-- 左门装饰线 -->
+  <rect x="110" y="90" width="124" height="3" rx="1" fill="#8b7355" opacity="0.5"/>
+  <rect x="110" y="110" width="124" height="3" rx="1" fill="#8b7355" opacity="0.5"/>
+  
+  <!-- 衣柜门（右） -->
+  <rect x="258" y="66" width="168" height="388" rx="10" fill="#a0845c"/>
+  <!-- 右门装饰线 -->
+  <rect x="282" y="90" width="120" height="3" rx="1" fill="#8b7355" opacity="0.5"/>
+  <rect x="282" y="110" width="120" height="3" rx="1" fill="#8b7355" opacity="0.5"/>
+  
+  <!-- 门缝中线 -->
+  <line x1="256" y1="66" x2="256" y2="454" stroke="#6b5a45" stroke-width="4"/>
+  
+  <!-- 左门把手 -->
+  <circle cx="160" cy="280" r="14" fill="#d4a76a" stroke="#8b7355" stroke-width="3"/>
+  <circle cx="160" cy="280" r="5" fill="#6b5a45"/>
+  
+  <!-- 右门把手 -->
+  <circle cx="340" cy="280" r="14" fill="#d4a76a" stroke="#8b7355" stroke-width="3"/>
+  <circle cx="340" cy="280" r="5" fill="#6b5a45"/>
+  
+  <!-- 左门内部衣架（透过玻璃效果） -->
+  <g opacity="0.6">
+    <line x1="130" y1="140" x2="130" y2="160" stroke="#faf8f5" stroke-width="2"/>
+    <line x1="100" y1="140" x2="160" y2="140" stroke="#faf8f5" stroke-width="3"/>
+    <path d="M100,140 Q110,130 120,125 L130,135 L140,125 Q150,130 160,140" fill="none" stroke="#faf8f5" stroke-width="2"/>
+    
+    <line x1="180" y1="140" x2="180" y2="160" stroke="#faf8f5" stroke-width="2"/>
+    <line x1="150" y1="140" x2="210" y2="140" stroke="#faf8f5" stroke-width="3"/>
+    <path d="M150,140 Q160,130 170,125 L180,135 L190,125 Q200,130 210,140" fill="none" stroke="#faf8f5" stroke-width="2"/>
+  </g>
+  
+  <!-- 右门内部衣架 -->
+  <g opacity="0.6">
+    <line x1="300" y1="140" x2="300" y2="160" stroke="#faf8f5" stroke-width="2"/>
+    <line x1="270" y1="140" x2="330" y2="140" stroke="#faf8f5" stroke-width="3"/>
+    <path d="M270,140 Q280,130 290,125 L300,135 L310,125 Q320,130 330,140" fill="none" stroke="#faf8f5" stroke-width="2"/>
+  </g>
+  
+  <!-- 底部阴影 -->
+  <ellipse cx="256" cy="470" rx="160" ry="12" fill="#6b5a45" opacity="0.3"/>
+</svg>
