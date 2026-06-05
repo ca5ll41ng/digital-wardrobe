@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """电子衣橱 - Flask 后端
 功能：图片上传、rembg 自动抠图、衣柜分类管理、搭配方案保存
+
+PyInstaller 打包: pyinstaller --onefile --add-data "templates;templates" --add-data "static;static" app.py
 """
 
 import json
+import os
+import sys
 import sqlite3
 import uuid
 from datetime import datetime
@@ -14,15 +18,29 @@ from flask_cors import CORS
 from PIL import Image
 from rembg import remove
 
-# ── 应用初始化 ──────────────────────────────────────────────
-app = Flask(__name__)
-CORS(app)
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 最大上传 16MB
+# ── PyInstaller 路径适配 ──────────────────────────────────
+if getattr(sys, 'frozen', False):
+    # 打包后：资源在 _MEIPASS 临时目录，用户数据在 exe 同级
+    MEIPASS = Path(sys._MEIPASS)
+    EXE_DIR = Path(sys.executable).resolve().parent
+    template_dir = MEIPASS / 'templates'
+    static_dir = MEIPASS / 'static'
+    app = Flask(__name__,
+                template_folder=str(template_dir),
+                static_folder=str(static_dir),
+                static_url_path='/static')
+    DATA_DIR = EXE_DIR
+else:
+    app = Flask(__name__)
+    DATA_DIR = Path(__file__).resolve().parent
 
-BASE_DIR = Path(__file__).resolve().parent
-UPLOAD_DIR = BASE_DIR / 'uploads'
-PROCESSED_DIR = BASE_DIR / 'processed'
-DB_PATH = BASE_DIR / 'wardrobe.db'
+# ── 应用初始化 ──────────────────────────────────────────────
+CORS(app)
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB
+
+UPLOAD_DIR = DATA_DIR / 'uploads'
+PROCESSED_DIR = DATA_DIR / 'processed'
+DB_PATH = DATA_DIR / 'wardrobe.db'
 
 UPLOAD_DIR.mkdir(exist_ok=True)
 PROCESSED_DIR.mkdir(exist_ok=True)
