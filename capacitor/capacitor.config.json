@@ -1,0 +1,9 @@
+{
+  "appId": "com.digitalwardrobe.app",
+  "appName": "电子衣橱",
+  "webDir": "www",
+  "server": {
+    "url": "http://你的服务器IP",
+    "cleartext": true
+  }
+}

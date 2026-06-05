@@ -1,0 +1,14 @@
+{
+  "name": "digital-wardrobe-apk",
+  "version": "1.0.0",
+  "description": "电子衣橱 Android 安装包",
+  "scripts": {
+    "build": "npx cap sync android",
+    "open": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/cli": "^6.0.0"
+  }
+}
